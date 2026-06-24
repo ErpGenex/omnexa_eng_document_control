@@ -4,3 +4,4 @@
 
 [post_model_sync]
 omnexa_eng_document_control.patches.v1_0.bootstrap_document_registry
+omnexa_eng_document_control.patches.v1_0.hide_document_control_workspace
