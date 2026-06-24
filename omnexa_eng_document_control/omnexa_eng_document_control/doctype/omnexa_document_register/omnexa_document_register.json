@@ -1,0 +1,243 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "format:ODR-{YYYY}-{#####}",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"document_title",
+		"document_number",
+		"vertical",
+		"column_break_1",
+		"document_category",
+		"registration_status",
+		"revision_no",
+		"section_source",
+		"source_doctype",
+		"source_document",
+		"source_app",
+		"section_scope",
+		"company",
+		"branch",
+		"department",
+		"section_dates",
+		"registration_date",
+		"expiry_date",
+		"retention_until",
+		"section_file",
+		"file_attachment",
+		"confidentiality",
+		"registered_by",
+		"qr_payload",
+		"notes"
+	],
+	"fields": [
+		{
+			"fieldname": "document_title",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"in_standard_filter": 1,
+			"label": "Document Title",
+			"reqd": 1
+		},
+		{
+			"fieldname": "document_number",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Document Number"
+		},
+		{
+			"fieldname": "vertical",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"in_standard_filter": 1,
+			"label": "Vertical",
+			"options": "Engineering\nConstruction\nEducation\nHealthcare\nFinance\nHR\nTourism\nGeneric",
+			"default": "Generic",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "document_category",
+			"fieldtype": "Select",
+			"in_standard_filter": 1,
+			"label": "Category",
+			"options": "Drawing\nSpecification\nContract\nPolicy\nReport\nCertificate\nCorrespondence\nOther",
+			"default": "Other"
+		},
+		{
+			"fieldname": "registration_status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"in_standard_filter": 1,
+			"label": "Status",
+			"options": "Draft\nUnder Review\nApproved\nPublished\nArchived\nSuperseded",
+			"default": "Draft",
+			"reqd": 1
+		},
+		{
+			"fieldname": "revision_no",
+			"fieldtype": "Data",
+			"label": "Revision",
+			"default": "R0"
+		},
+		{
+			"fieldname": "section_source",
+			"fieldtype": "Section Break",
+			"label": "Source Link"
+		},
+		{
+			"fieldname": "source_doctype",
+			"fieldtype": "Link",
+			"label": "Source DocType",
+			"options": "DocType",
+			"read_only": 1
+		},
+		{
+			"fieldname": "source_document",
+			"fieldtype": "Dynamic Link",
+			"label": "Source Document",
+			"options": "source_doctype",
+			"read_only": 1
+		},
+		{
+			"fieldname": "source_app",
+			"fieldtype": "Data",
+			"label": "Source App",
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_scope",
+			"fieldtype": "Section Break",
+			"label": "Organization"
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_standard_filter": 1,
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "branch",
+			"fieldtype": "Link",
+			"in_standard_filter": 1,
+			"label": "Branch",
+			"options": "Branch",
+			"reqd": 1
+		},
+		{
+			"fieldname": "department",
+			"fieldtype": "Data",
+			"label": "Department"
+		},
+		{
+			"fieldname": "section_dates",
+			"fieldtype": "Section Break",
+			"label": "Dates"
+		},
+		{
+			"fieldname": "registration_date",
+			"fieldtype": "Date",
+			"default": "Today",
+			"label": "Registration Date"
+		},
+		{
+			"fieldname": "expiry_date",
+			"fieldtype": "Date",
+			"label": "Expiry Date"
+		},
+		{
+			"fieldname": "retention_until",
+			"fieldtype": "Date",
+			"label": "Retention Until"
+		},
+		{
+			"fieldname": "section_file",
+			"fieldtype": "Section Break",
+			"label": "File & Security"
+		},
+		{
+			"fieldname": "file_attachment",
+			"fieldtype": "Attach",
+			"label": "File"
+		},
+		{
+			"fieldname": "confidentiality",
+			"fieldtype": "Select",
+			"label": "Confidentiality",
+			"options": "Public\nInternal\nConfidential\nRestricted",
+			"default": "Internal"
+		},
+		{
+			"fieldname": "registered_by",
+			"fieldtype": "Link",
+			"label": "Registered By",
+			"options": "User",
+			"read_only": 1
+		},
+		{
+			"fieldname": "qr_payload",
+			"fieldtype": "Small Text",
+			"label": "QR Payload",
+			"read_only": 1
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Small Text",
+			"label": "Notes"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"modified": "2026-06-24 00:00:00.000000",
+	"module": "Omnexa Eng Document Control",
+	"name": "Omnexa Document Register",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"delete": 0,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Company Admin",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"delete": 0,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Omnexa Document Controller",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"title_field": "document_title",
+	"track_changes": 1
+}

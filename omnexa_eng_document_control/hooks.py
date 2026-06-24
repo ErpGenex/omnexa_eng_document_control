@@ -1,7 +1,7 @@
 app_name = "omnexa_eng_document_control"
 app_title = "Omnexa Eng Document Control"
 app_publisher = "Omnexa"
-app_description = "Document control extraction stub"
+app_description = "Global document registry and ISO 19650 document control hub"
 app_email = "doccontrol@erpgenex.com"
 app_license = "mit"
 
@@ -27,7 +27,7 @@ required_apps = ["omnexa_core", "omnexa_projects_pm"]
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/omnexa_eng_document_control/css/omnexa_eng_document_control.css"
+app_include_css = "/assets/omnexa_eng_document_control/css/edc_desk.css"
 # app_include_js = "/assets/omnexa_eng_document_control/js/omnexa_eng_document_control.js"
 
 # include js, css files in header of web template
@@ -85,7 +85,18 @@ required_apps = ["omnexa_core", "omnexa_projects_pm"]
 # ------------
 
 # before_install = "omnexa_eng_document_control.install.before_install"
-# after_install = "omnexa_eng_document_control.install.after_install"
+after_install = "omnexa_eng_document_control.install.after_install"
+after_migrate = "omnexa_eng_document_control.install.after_migrate"
+
+permission_query_conditions = {
+	"Omnexa Document Register": "omnexa_eng_document_control.omnexa_eng_document_control.doctype.omnexa_document_register.omnexa_document_register.permission_query_conditions",
+}
+
+scheduler_events = {
+	"daily": [
+		"omnexa_eng_document_control.document_registry.sync.sync_all_vertical_registers",
+	],
+}
 
 # Uninstallation
 # ------------

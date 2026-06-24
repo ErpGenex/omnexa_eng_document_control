@@ -1,0 +1,21 @@
+{
+	"charts": [],
+	"content": "[{\"id\":\"dc-h\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Document Control</b></span>\",\"col\":12}}]",
+	"doctype": "Workspace",
+	"for_user": "",
+	"hide_custom": 0,
+	"icon": "folder-normal",
+	"is_hidden": 0,
+	"label": "Document Control",
+	"links": [],
+	"module": "Omnexa Eng Document Control",
+	"name": "Document Control",
+	"public": 1,
+	"roles": [
+		{"role": "System Manager"},
+		{"role": "Company Admin"},
+		{"role": "Omnexa Document Controller"}
+	],
+	"shortcuts": [],
+	"title": "Document Control"
+}

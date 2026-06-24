@@ -1,0 +1,85 @@
+{
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"enable_vertical_sync",
+		"sync_engineering_register",
+		"sync_construction_cde",
+		"section_retention",
+		"default_retention_years",
+		"section_print",
+		"print_show_qr",
+		"print_show_filters"
+	],
+	"fields": [
+		{
+			"default": "1",
+			"fieldname": "enable_vertical_sync",
+			"fieldtype": "Check",
+			"label": "Enable Vertical Registry Sync"
+		},
+		{
+			"default": "1",
+			"fieldname": "sync_engineering_register",
+			"fieldtype": "Check",
+			"label": "Sync Engineering Document Register"
+		},
+		{
+			"default": "1",
+			"fieldname": "sync_construction_cde",
+			"fieldtype": "Check",
+			"label": "Sync Construction CDE Documents"
+		},
+		{
+			"fieldname": "section_retention",
+			"fieldtype": "Section Break",
+			"label": "Retention"
+		},
+		{
+			"default": "7",
+			"fieldname": "default_retention_years",
+			"fieldtype": "Int",
+			"label": "Default Retention (Years)"
+		},
+		{
+			"fieldname": "section_print",
+			"fieldtype": "Section Break",
+			"label": "Printing"
+		},
+		{
+			"default": "1",
+			"fieldname": "print_show_qr",
+			"fieldtype": "Check",
+			"label": "Show QR Code on Print"
+		},
+		{
+			"default": "1",
+			"fieldname": "print_show_filters",
+			"fieldtype": "Check",
+			"label": "Show Applied Filters on Print"
+		}
+	],
+	"issingle": 1,
+	"module": "Omnexa Eng Document Control",
+	"name": "Omnexa Document Control Settings",
+	"permissions": [
+		{
+			"create": 1,
+			"read": 1,
+			"role": "System Manager",
+			"write": 1
+		},
+		{
+			"create": 1,
+			"read": 1,
+			"role": "Company Admin",
+			"write": 1
+		},
+		{
+			"read": 1,
+			"role": "Omnexa Document Controller",
+			"write": 1
+		}
+	],
+	"track_changes": 1
+}

@@ -1,6 +1,8 @@
 ### Omnexa Eng Document Control
 
-Document control extraction stub. Depends on `omnexa_engineering_consulting`; use `consulting_bridge.get_document_control_hooks()` to reach `document_control_hooks` until DocTypes move here.
+Global document registry hub. **Reports for this app only** — sector reports stay in their own apps.
+
+`Documants/` is documentation SSOT only; see `Documants/Bench-Docs/AUDIT/05_ARCHITECTURE_POLICY.md`.
 
 ### Installation
 
