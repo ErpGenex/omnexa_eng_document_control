@@ -2,10 +2,10 @@
 # License: MIT
 
 import frappe
-from frappe.tests import IntegrationTestCase
+from frappe.tests.utils import FrappeTestCase
 
 
-class TestDocumentRegistry(IntegrationTestCase):
+class TestDocumentRegistry(FrappeTestCase):
 	def test_doctype_exists(self):
 		self.assertTrue(frappe.db.exists("DocType", "Omnexa Document Register"))
 
