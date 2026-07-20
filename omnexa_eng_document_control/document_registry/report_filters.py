@@ -55,46 +55,46 @@ def standard_registry_filters() -> list[dict]:
 			"label": "Company",
 			"options": "Company",
 			"reqd": 1,
-			"width": "180px",
-		},
+			"width": "180px"
+	},
 		{
 			"fieldname": "branch",
 			"fieldtype": "Link",
 			"label": "Branch",
 			"options": "Branch",
-			"width": "180px",
-		},
+			"width": "180px"
+	},
 		{
 			"fieldname": "from_date",
 			"fieldtype": "Date",
 			"label": "From Date",
-			"width": "120px",
-		},
+			"width": "120px"
+	},
 		{
 			"fieldname": "to_date",
 			"fieldtype": "Date",
 			"label": "To Date",
-			"width": "120px",
-		},
+			"width": "120px"
+	},
 		{
 			"fieldname": "vertical",
 			"fieldtype": "Select",
 			"label": "Vertical",
 			"options": "\nEngineering\nConstruction\nEducation\nHealthcare\nFinance\nHR\nTourism\nGeneric",
-			"width": "140px",
-		},
+			"width": "140px"
+	},
 		{
 			"fieldname": "registration_status",
 			"fieldtype": "Select",
 			"label": "Status",
 			"options": "\nDraft\nUnder Review\nApproved\nPublished\nArchived\nSuperseded",
-			"width": "140px",
-		},
+			"width": "140px"
+	},
 		{
 			"fieldname": "document_category",
 			"fieldtype": "Select",
 			"label": "Category",
 			"options": "\nDrawing\nSpecification\nContract\nPolicy\nReport\nCertificate\nCorrespondence\nOther",
-			"width": "140px",
-		},
+			"width": "140px"
+	},
 	]

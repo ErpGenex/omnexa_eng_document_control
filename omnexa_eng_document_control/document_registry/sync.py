@@ -12,16 +12,16 @@ STATUS_MAP_ENGINEERING = {
 	"WIP": "Draft",
 	"Shared": "Under Review",
 	"Published": "Published",
-	"Archived": "Archived",
-}
+	"Archived": "Archived"
+	}
 
 STATUS_MAP_CONSTRUCTION = {
 	"Draft": "Draft",
 	"Under Review": "Under Review",
 	"Approved": "Approved",
 	"Rejected": "Draft",
-	"Superseded": "Superseded",
-}
+	"Superseded": "Superseded"
+	}
 
 
 def _settings():
@@ -33,9 +33,11 @@ def _settings():
 def sync_all_vertical_registers() -> dict:
 	settings = _settings()
 	if settings and not settings.get("enable_vertical_sync"):
-		return {"skipped": True, "reason": "sync disabled"}
+		return {"skipped": True, "reason": "sync disabled"
+	}
 
-	stats = {"created": 0, "updated": 0, "sources": []}
+	stats = {"created": 0, "updated": 0, "sources": []
+	}
 	if not settings or settings.get("sync_engineering_register"):
 		stats["sources"].append(_sync_engineering_register(stats))
 	if not settings or settings.get("sync_construction_cde"):
@@ -47,7 +49,8 @@ def sync_all_vertical_registers() -> dict:
 def _upsert_from_source(payload: dict, stats: dict) -> str:
 	existing = frappe.db.get_value(
 		"Omnexa Document Register",
-		{"source_doctype": payload["source_doctype"], "source_document": payload["source_document"]},
+		{"source_doctype": payload["source_doctype"], "source_document": payload["source_document"]
+	},
 		"name",
 	)
 	if existing:
@@ -72,7 +75,8 @@ def _retention_until(years: int | None = None) -> str:
 
 def _sync_engineering_register(stats: dict) -> dict:
 	if not frappe.db.exists("DocType", "Engineering Document Register"):
-		return {"vertical": "Engineering", "count": 0, "skipped": "doctype missing"}
+		return {"vertical": "Engineering", "count": 0, "skipped": "doctype missing"
+	}
 
 	retention_years = frappe.db.get_single_value("Omnexa Document Control Settings", "default_retention_years") or 7
 	rows = frappe.get_all(
@@ -111,16 +115,18 @@ def _sync_engineering_register(stats: dict) -> dict:
 				"source_doctype": "Engineering Document Register",
 				"source_document": row.name,
 				"source_app": "omnexa_engineering_consulting",
-				"confidentiality": "Internal",
-			},
+				"confidentiality": "Internal"
+	},
 			stats,
 		)
-	return {"vertical": "Engineering", "count": len(rows)}
+	return {"vertical": "Engineering", "count": len(rows)
+	}
 
 
 def _sync_construction_cde(stats: dict) -> dict:
 	if not frappe.db.exists("DocType", "Construction CDE Document"):
-		return {"vertical": "Construction", "count": 0, "skipped": "doctype missing"}
+		return {"vertical": "Construction", "count": 0, "skipped": "doctype missing"
+	}
 
 	retention_years = frappe.db.get_single_value("Omnexa Document Control Settings", "default_retention_years") or 7
 	rows = frappe.get_all(
@@ -161,11 +167,12 @@ def _sync_construction_cde(stats: dict) -> dict:
 				"source_doctype": "Construction CDE Document",
 				"source_document": row.name,
 				"source_app": "omnexa_construction",
-				"confidentiality": "Internal",
-			},
+				"confidentiality": "Internal"
+	},
 			stats,
 		)
-	return {"vertical": "Construction", "count": len(rows)}
+	return {"vertical": "Construction", "count": len(rows)
+	}
 
 
 def _map_category(document_type: str | None) -> str:
@@ -173,7 +180,7 @@ def _map_category(document_type: str | None) -> str:
 		"Drawing": "Drawing",
 		"Specification": "Specification",
 		"Calculation": "Report",
-		"Method Statement": "Report",
+		"Method Statement": "Report"
 	}
 	return mapping.get(document_type or "", "Other")
 

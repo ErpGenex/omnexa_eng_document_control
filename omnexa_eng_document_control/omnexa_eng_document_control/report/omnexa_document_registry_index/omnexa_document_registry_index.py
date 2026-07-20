@@ -42,16 +42,26 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Register ID"), "fieldname": "name", "fieldtype": "Link", "options": "Omnexa Document Register", "width": 130},
-		{"label": _("Title"), "fieldname": "document_title", "fieldtype": "Data", "width": 220},
-		{"label": _("Number"), "fieldname": "document_number", "fieldtype": "Data", "width": 140},
-		{"label": _("Vertical"), "fieldname": "vertical", "fieldtype": "Data", "width": 110},
-		{"label": _("Category"), "fieldname": "document_category", "fieldtype": "Data", "width": 110},
-		{"label": _("Status"), "fieldname": "registration_status", "fieldtype": "Data", "width": 110},
-		{"label": _("Revision"), "fieldname": "revision_no", "fieldtype": "Data", "width": 80},
-		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 110},
-		{"label": _("Registered"), "fieldname": "registration_date", "fieldtype": "Date", "width": 100},
-		{"label": _("Source"), "fieldname": "source_doctype", "fieldtype": "Data", "width": 160},
+		{"label": _("Register ID"), "fieldname": "name", "fieldtype": "Link", "options": "Omnexa Document Register", "width": 130
+	},
+		{"label": _("Title"), "fieldname": "document_title", "fieldtype": "Data", "width": 220
+	},
+		{"label": _("Number"), "fieldname": "document_number", "fieldtype": "Data", "width": 140
+	},
+		{"label": _("Vertical"), "fieldname": "vertical", "fieldtype": "Data", "width": 110
+	},
+		{"label": _("Category"), "fieldname": "document_category", "fieldtype": "Data", "width": 110
+	},
+		{"label": _("Status"), "fieldname": "registration_status", "fieldtype": "Data", "width": 110
+	},
+		{"label": _("Revision"), "fieldname": "revision_no", "fieldtype": "Data", "width": 80
+	},
+		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 110
+	},
+		{"label": _("Registered"), "fieldname": "registration_date", "fieldtype": "Date", "width": 100
+	},
+		{"label": _("Source"), "fieldname": "source_doctype", "fieldtype": "Data", "width": 160
+	},
 	]
 
 
@@ -64,16 +74,17 @@ def _chart(data: list[dict]) -> dict:
 	return {
 		"data": {
 			"labels": list(by_status.keys()),
-			"datasets": [{"name": _("By Status"), "values": list(by_status.values())}],
-		},
+			"datasets": [{"name": _("By Status"), "values": list(by_status.values())}]
+	},
 		"type": "donut",
 		"title": _("Registry by Status"),
 		"height": 240,
 		"fieldtype": "Currency",
-		"custom_options": json_donut_footer(by_vertical),
+		"custom_options": json_donut_footer(by_vertical)
 	}
 
 
 def json_donut_footer(by_vertical: dict[str, int]) -> dict:
 	parts = [f"{k}: {v}" for k, v in sorted(by_vertical.items())]
-	return {"subtitle": " | ".join(parts) if parts else ""}
+	return {"subtitle": " | ".join(parts) if parts else ""
+	}

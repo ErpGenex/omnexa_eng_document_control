@@ -20,7 +20,8 @@ class TestDocumentRegistry(FrappeTestCase):
 		company = frappe.db.get_value("Company", {}, "name")
 		if not company:
 			self.skipTest("no company")
-		branch = frappe.db.get_value("Branch", {"company": company}, "name")
+		branch = frappe.db.get_value("Branch", {"company": company
+	}, "name")
 		if not branch:
 			self.skipTest("no branch")
 		doc = frappe.get_doc(
@@ -30,8 +31,8 @@ class TestDocumentRegistry(FrappeTestCase):
 				"vertical": "Generic",
 				"registration_status": "Draft",
 				"company": company,
-				"branch": branch,
-			}
+				"branch": branch
+	}
 		)
 		doc.flags.ignore_permissions = True
 		doc.insert()

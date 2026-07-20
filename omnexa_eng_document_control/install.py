@@ -40,6 +40,6 @@ def _ensure_document_controller_role():
 		{
 			"doctype": "Role",
 			"role_name": "Omnexa Document Controller",
-			"desk_access": 1,
-		}
+			"desk_access": 1
+	}
 	).insert(ignore_permissions=True)

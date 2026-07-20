@@ -1,0 +1,131 @@
+{
+    "name": "Omnexa Eng Document Control",
+    "module": "omnexa_eng_document_control",
+    "is_standard": 1,
+    "shortcuts": [],
+    "links": [
+        {
+            "label": "Omnexa Eng Document Control List",
+            "name": "omnexa_eng_document_control",
+            "type": "List",
+            "link_to": "omnexa_eng_document_control",
+            "onboard": 1
+        },
+        {
+            "label": "Omnexa Eng Document Control Dashboard",
+            "name": "omnexa_eng_document_control_dashboard",
+            "type": "Dashboard",
+            "link_to": "omnexa_eng_document_control_dashboard",
+            "onboard": 1
+        }
+    ],
+    "onboarding": [],
+    "charts": [
+        {
+            "label": "Monthly Activity",
+            "chart_name": "omnexa_eng_document_control_monthly_activity",
+            "chart_type": "Line",
+            "is_standard": 1
+        },
+        {
+            "label": "Status Distribution",
+            "chart_name": "omnexa_eng_document_control_status_distribution",
+            "chart_type": "Pie",
+            "is_standard": 1
+        },
+        {
+            "label": "Performance Metrics",
+            "chart_name": "omnexa_eng_document_control_performance_metrics",
+            "chart_type": "Bar",
+            "is_standard": 1
+        }
+    ],
+    "card": {
+        "card_name": "omnexa_eng_document_control",
+        "card_style": "Default"
+    },
+    "number_cards": [
+        {
+            "label": "Total Records",
+            "number_card_name": "omnexa_eng_document_control_total_records",
+            "number_card_doc_type": "Number Card",
+            "is_standard": 1
+        },
+        {
+            "label": "Active Items",
+            "number_card_name": "omnexa_eng_document_control_active_items",
+            "number_card_doc_type": "Number Card",
+            "is_standard": 1
+        },
+        {
+            "label": "Pending Actions",
+            "number_card_name": "omnexa_eng_document_control_pending_actions",
+            "number_card_doc_type": "Number Card",
+            "is_standard": 1
+        },
+        {
+            "label": "Completed Tasks",
+            "number_card_name": "omnexa_eng_document_control_completed_tasks",
+            "number_card_doc_type": "Number Card",
+            "is_standard": 1
+        }
+    ],
+    "reports": [
+        {
+            "label": "Omnexa Eng Document Control Report",
+            "name": "omnexa_eng_document_control_report",
+            "type": "Report",
+            "is_standard": 1
+        },
+        {
+            "label": "Summary Report",
+            "name": "omnexa_eng_document_control_summary_report",
+            "type": "Report",
+            "is_standard": 1
+        },
+        {
+            "label": "Detailed Analysis",
+            "name": "omnexa_eng_document_control_detailed_analysis",
+            "type": "Report",
+            "is_standard": 1
+        },
+        {
+            "label": "Performance Report",
+            "name": "omnexa_eng_document_control_performance_report",
+            "type": "Report",
+            "is_standard": 1
+        }
+    ],
+    "operations": [
+        {
+            "label": "Create Omnexa Eng Document Control",
+            "name": "create_omnexa_eng_document_control",
+            "type": "Action",
+            "is_standard": 1
+        },
+        {
+            "label": "Import Data",
+            "name": "import_omnexa_eng_document_control_data",
+            "type": "Action",
+            "is_standard": 1
+        },
+        {
+            "label": "Export Records",
+            "name": "export_omnexa_eng_document_control_records",
+            "type": "Action",
+            "is_standard": 1
+        },
+        {
+            "label": "Settings",
+            "name": "omnexa_eng_document_control_settings",
+            "type": "Action",
+            "is_standard": 1
+        },
+        {
+            "label": "Bulk Update",
+            "name": "bulk_update_omnexa_eng_document_control",
+            "type": "Action",
+            "is_standard": 1
+        }
+    ]
+}

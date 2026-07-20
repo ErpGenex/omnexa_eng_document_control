@@ -89,14 +89,13 @@ after_install = "omnexa_eng_document_control.install.after_install"
 after_migrate = "omnexa_eng_document_control.install.after_migrate"
 
 permission_query_conditions = {
-	"Omnexa Document Register": "omnexa_eng_document_control.omnexa_eng_document_control.doctype.omnexa_document_register.omnexa_document_register.permission_query_conditions",
-}
+	"Omnexa Document Register": "omnexa_eng_document_control.omnexa_eng_document_control.doctype.omnexa_document_register.omnexa_document_register.permission_query_conditions"
+	}
 
 scheduler_events = {
 	"daily": [
 		"omnexa_eng_document_control.document_registry.sync.sync_all_vertical_registers",
-	],
-}
+	]}
 
 # Uninstallation
 # ------------
@@ -222,22 +221,22 @@ scheduler_events = {
 
 # user_data_fields = [
 # 	{
-# 		"doctype": "{doctype_1}",
-# 		"filter_by": "{filter_by}",
-# 		"redact_fields": ["{field_1}", "{field_2}"],
+# 		"doctype": "{}",
+# 		"filter_by": "{}",
+# 		"redact_fields": ["{}", "{}"],
 # 		"partial": 1,
 # 	},
 # 	{
-# 		"doctype": "{doctype_2}",
-# 		"filter_by": "{filter_by}",
+# 		"doctype": "{}",
+# 		"filter_by": "{}",
 # 		"partial": 1,
 # 	},
 # 	{
-# 		"doctype": "{doctype_3}",
+# 		"doctype": "{}",
 # 		"strict": False,
 # 	},
 # 	{
-# 		"doctype": "{doctype_4}"
+# 		"doctype": "{}"
 # 	}
 # ]
 

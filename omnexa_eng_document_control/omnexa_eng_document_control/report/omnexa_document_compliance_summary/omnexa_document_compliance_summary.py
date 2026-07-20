@@ -32,10 +32,14 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Vertical"), "fieldname": "vertical", "fieldtype": "Data", "width": 120},
-		{"label": _("Status"), "fieldname": "registration_status", "fieldtype": "Data", "width": 130},
-		{"label": _("Confidentiality"), "fieldname": "confidentiality", "fieldtype": "Data", "width": 120},
-		{"label": _("Documents"), "fieldname": "doc_count", "fieldtype": "Int", "width": 100},
+		{"label": _("Vertical"), "fieldname": "vertical", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Status"), "fieldname": "registration_status", "fieldtype": "Data", "width": 130
+	},
+		{"label": _("Confidentiality"), "fieldname": "confidentiality", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Documents"), "fieldname": "doc_count", "fieldtype": "Int", "width": 100
+	},
 	]
 
 
@@ -46,8 +50,9 @@ def _summary_chart(rows: list[dict]) -> dict:
 		labels.append(f"{row.vertical} · {row.registration_status}")
 		values.append(row.doc_count)
 	return {
-		"data": {"labels": labels, "datasets": [{"name": _("Documents"), "values": values}]},
+		"data": {"labels": labels, "datasets": [{"name": _("Documents"), "values": values}]
+	},
 		"type": "bar",
 		"title": _("Compliance Matrix"),
-		"height": 280,
+		"height": 280
 	}
